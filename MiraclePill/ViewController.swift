@@ -12,6 +12,21 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
     @IBOutlet weak var statePicker: UIPickerView!
     @IBOutlet weak var statePickerBtn: UIButton!
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var countryTextField: UITextField!
+    @IBOutlet weak var zipcodeLabel: UILabel!
+    @IBOutlet weak var zipcodeTextField: UITextField!
+    @IBOutlet weak var successImg: UIImageView!
+    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var fullNameTextField: UITextField!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var addressTextField: UITextField!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var stateLabel: UILabel!
+    
+    
+    
     
     let states = ["Alaska", "Arkansas", "Alabama", "California", "Maine", "New York"]
     
@@ -26,6 +41,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         // Dispose of any resources that can be recreated.
     }
     @IBAction func stateButtonPressed(_ sender: AnyObject) {
+        countryLabel.isHidden = true
+        countryTextField.isHidden = true
+        zipcodeLabel.isHidden = true
+        zipcodeTextField.isHidden = true
         statePicker.isHidden = false
     }
 
@@ -44,6 +63,28 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         statePickerBtn.setTitle(states[row], for: .normal)
         statePicker.isHidden = true
+        countryLabel.isHidden = false
+        countryTextField.isHidden = false
+        zipcodeLabel.isHidden = false
+        zipcodeTextField.isHidden = false
     }
+    
+    @IBAction func buyNowPressed(_ sender: AnyObject) {
+        fullNameLabel.isHidden = true
+        fullNameTextField.isHidden = true
+        addressLabel.isHidden = true
+        addressTextField.isHidden = true
+        cityLabel.isHidden = true
+        cityTextField.isHidden = true
+        stateLabel.isHidden = true
+        statePickerBtn.isHidden = true
+        countryLabel.isHidden = true
+        countryTextField.isHidden = true
+        zipcodeLabel.isHidden = true
+        zipcodeTextField.isHidden = true
+        successImg.isHidden = false
+        
+    }
+    
 }
 
